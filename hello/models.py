@@ -87,31 +87,15 @@ class Quiz08Rps(object):
         c = self.com
         u = self.user
         rps = ['가위', '바위', '보']
-        if u ==1:
-            if c == 1:
-                res = f'플레이어: {rps[0]}, 컴퓨터: {rps[0]}, 결과: 무승부'
-            elif c == 2:
-                res = f'플레이어: {rps[0]}, 컴퓨터: {rps[1]}, 결과: 패배'
-            elif c == 3:
-                res = f'플레이어: {rps[0]}, 컴퓨터: {rps[2]}, 결과: 승리'
-        elif u == 2:
-            if c == 1:
-                res = f'플레이어: {rps[0]}, 컴퓨터: {rps[2]}, 결과: 승리'
-            elif c == 2:
-                res = f'플레이어: {rps[0]}, 컴퓨터: {rps[0]}, 결과: 무승부'
-            elif c == 3:
-                res = f'플레이어: {rps[0]}, 컴퓨터: {rps[1]}, 결과: 패배'
-        elif u == 3:
-            if c == 1:
-                res = f'플레이어: {rps[0]}, 컴퓨터: {rps[1]}, 결과: 패배'
-            elif c == 2:
-                res = f'플레이어: {rps[0]}, 컴퓨터: {rps[2]}, 결과: 승리'
-            elif c == 3:
-                res = f'플레이어: {rps[0]}, 컴퓨터: {rps[0]}, 결과: 무승부'
-            else:
-                res = '1~3 입력'
-
-            return res
+        if u == c:
+            res = f'플레이어:{rps[u-1]}, 컴퓨터:{rps[c-1]}, 결과:무승부'
+        elif u - c == 1 or u - c == -2:
+            res = f'플레이어:{rps[u - 1]}, 컴퓨터:{rps[c - 1]}, 결과:무승부'
+        elif u - c == 1 or u - c == 2:
+            res = f'플레이어:{rps[u - 1]}, 컴퓨터:{rps[c - 1]}, 결과:무승부'
+        else:
+            res = '1~3 입력'
+        return res
 
 
 class Quiz09GetPrime:
