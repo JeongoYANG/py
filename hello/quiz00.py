@@ -124,7 +124,8 @@ class Quiz00:
     def passChk(self):  # 60점이상이면 합격
         pass
 
-    def quiz06memberChoice(self):
+    @staticmethod
+    def quiz06memberChoice():
         return memberlist()[myRandom(0, 23)]
 
     def quiz07lotto(self):
