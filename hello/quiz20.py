@@ -3,6 +3,8 @@ import urllib.request
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
+from hello.domains import memberlist, myRandom, my100
+
 
 class Quiz20:
 
@@ -61,7 +63,14 @@ class Quiz20:
         return [i.get_text() for i in ls]
 
     def quiz25dictcom(self) -> str:
-        return None
+        # memberlist()[myRandom(0,23)] 이것이 한 명인데 5명 추출
+        # scores는 0~100점 사이 랜덤
+        students = [memberlist()[myRandom(0, 23)] for i in range(5)]
+        scores = [str(my100()) for i in range(5)]
+        dict = {}
+        for i, j in zip(students, scores):
+            dict[i] = j
+        print(dict)
 
     def quiz26map(self) -> str:
         return None
